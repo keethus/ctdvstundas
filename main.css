@@ -5,41 +5,94 @@ html, body {
 	width: 100%;
 	background: #151515;
 }
-
 body {
 	height:100%;
-}
-#overlay {
-	content: "";
-	position: absolute;
-	left: 0; 
-	right: 0;
-	top: 0; 
-	bottom: 0;
-	background: black;
 }
 #saraksts {
 	margin-top:10%;
 	margin-left:12%;
 }
-#wrapperis{
-	width:20%;
-	padding:10px;
-}
 .diena {
-	width:90%;
+	position:absolute;
+	position:fixed;
+	margin-left:220px;
+	top:24%;
+	transform: scaleY(0);
+	color:white;
+	font-family: 'Ubuntu', sans-serif;
+	background: #202020;
 	padding:20px;
-	display:none;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	transform-style: flat;
+	transform-origin: left;  
 }
 #laikaStils {
-	display: none;
+	display:none;
+}
+#kabStils {
+	color:#f39c12;
+}
+#btn_Pirmdiena:hover + #diena_Pirmdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+
+}
+#btn_Otrdiena:hover + #diena_Otrdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Tresdiena:hover + #diena_Tresdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Ceturtdiena:hover + #diena_Ceturtdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Piektdiena:hover + #diena_Piektdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+
+#btn_Otrdiena{
+	margin-top:65px;
+} 
+#btn_Tresdiena{
+	margin-top:130px;
+} 
+#btn_Ceturtdiena{
+	margin-top:195px;
+}
+#btn_Piektdiena{
+	margin-top:260px;
+}
+.from-left {
+	top:25%;
+}
+.title {
+	text-align:center;
+	color:#202020;
+	font-family: 'Ubuntu', sans-serif;
+	letter-spacing: 0.5px;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
 }
 button {
 	font-family: 'Ubuntu', sans-serif;
-	letter-spacing: 2px;
+	letter-spacing: 0.5px;
 	background: none;
 	color: white;
-	position: relative;
+	position: absolute;
 	outline: none;
 	border: none;
 	height: 50px;

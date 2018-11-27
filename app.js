@@ -54,7 +54,7 @@ $(document).ready(function() {
 	
 	$.each(stunduSaraksts, function(key, value) {
 		
-		$('#saraksts').append('<div id="wrapperis"><button class="from-left">'+key+'<span class="icon-right"></span><span class="icon-right after"></span></button><div class="diena" id="diena_' +key+ '"></div></div>');
+		$('#saraksts').append('<div id="wrapperis"><button class="from-left" id="btn_'+key+'">'+key+'<span class="icon-right"></span><span class="icon-right after"></span></button><div class="diena" id="diena_' +key+ '"></div></div>');
 		
 		var stundas = value;
 		
