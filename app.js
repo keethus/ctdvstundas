@@ -1,5 +1,5 @@
 var stunduSaraksts = {
-	Pirmdiena:  {
+	pirmdiena:  {
 		pirma_stunda: { laiks: '8:30-9:10', nosaukums: 'EIKT noz.tehn. Darbu pamatiemaņas', kabinets: '309'},
 		otra_stunda: { laiks: '9:15-9:55', nosaukums: 'EIKT noz.tehn. Darbu pamatiemaņas', kabinets: '309'},
 		tresa_stunda: { laiks: '10:05-10:45', nosaukums: 'Sistēmu Programmēšana', kabinets: '309'},
@@ -9,7 +9,7 @@ var stunduSaraksts = {
 		septita_stunda: { laiks: '13:45-14:25', nosaukums: 'Angļu valoda', kabinets: '305'},
 		astota_stunda: { laiks: '14:30-15:10', nosaukums: 'Angļu valoda', kabinets: '305'}
 	},
-	Otrdiena: {
+	otrdiena: {
 		pirma_stunda: { laiks: '8:30-9:10', nosaukums: 'Matemātika', kabinets: '304'},
 		otra_stunda: { laiks: '9:15-9:55', nosaukums: 'Matemātika', kabinets: '304'},
 		tresa_stunda: { laiks: '10:05-10:45', nosaukums: 'Informātika', kabinets: '410'},
@@ -19,7 +19,7 @@ var stunduSaraksts = {
 		septita_stunda: { laiks: '13:45-14:25', nosaukums: 'Krievu valoda', kabinets: '206'},
 		astota_stunda: { laiks: '14:30-15:10', nosaukums: 'Krievu valoda', kabinets: '206'},
 	},
-	Tresdiena: {
+	tresdiena: {
 		pirma_stunda: { laiks: '8:30-9:10', nosaukums: 'Vienk.algoritmu izstrāde', kabinets: '309'},
 		otra_stunda: { laiks: '9:15-9:55', nosaukums: 'Vienk.algoritmu izstrāde', kabinets: '309'},
 		tresa_stunda: { laiks: '10:05-10:45', nosaukums: 'Sabiedr.un cilv.droš.', kabinets: '203'},
@@ -29,7 +29,7 @@ var stunduSaraksts = {
 		septita_stunda: { laiks: '13:45-14:25', nosaukums: 'Preču un pakalp.izv. EIKT infrastr.izveidei', kabinets: '309'},
 		astota_stunda: { laiks: '14:30-15:10', nosaukums: 'Preču un pakalp.izv. EIKT infrastr.izveidei', kabinets: '309'},
 	},
-	Ceturtdiena: {
+	ceturtdiena: {
 		pirma_stunda: { laiks: '8:30-9:10', nosaukums: 'Latv.un pas vēsture', kabinets: '206'},
 		otra_stunda: { laiks: '9:15-9:55', nosaukums: 'Latv.un pas vēsture', kabinets: '206'},
 		tresa_stunda: { laiks: '10:05-10:45', nosaukums: 'Latviešu valoda', kabinets: '305'},
@@ -39,7 +39,7 @@ var stunduSaraksts = {
 		septita_stunda: { laiks: '13:45-14:25', nosaukums: 'Matemātika', kabinets: '304'},
 		astota_stunda: { laiks: '14:30-15:10', nosaukums: 'Matemātika', kabinets: '304'},
 	},
-	Piektdiena: {
+	piektdiena: {
 		pirma_stunda: { laiks: '8:30-9:10', nosaukums: 'Fizika', kabinets: '401'},
 		otra_stunda: { laiks: '9:15-9:55', nosaukums: 'Fizika', kabinets: '401'},
 		tresa_stunda: { laiks: '10:05-10:45', nosaukums: 'Fizika', kabinets: '401'},
@@ -48,22 +48,28 @@ var stunduSaraksts = {
 	}
 }
 $(document).ready(function() {
-	console.log( "ready" );
-	console.log(stunduSaraksts);
+	//console.log( "ready" );
+	//console.log(stunduSaraksts);
 	
 
 	$.each(stunduSaraksts, function(key, value){
 		console.log(key+ ": " + value);
-		$('#saraksts').append('<div id="diena_' +key+ '"><h3></div>');
+		$('#saraksts').append('<div class="dienas" id="diena_' +key+ '"><h3></div>');
 
 		var stundas = value;
 		
 		$('#diena_'+key+'').append('<table></table>');
-		$('#diena_' +key+' table').append('<tr><th>Laiks:</th><th>Prieksmets:</th><th>Kabinets:</th></tr>');
+		$('#diena_' +key+' table').append('<tr class="day-header"><th class="laiks-th">Laiks</th><th class="prieksmets-th">Priekšmets</th><th class="kabinets-th">Kab.</th></tr>');
 
 		$.each(stundas, function(key2, value2){
 			console.log(value2);
-			$('#diena_'+key+' table').append('<tr><td><>' +value2.laiks+'</p></td><td><p>' +value2.nosaukums+ '</p></td><td><p>'+value2.kabinets+'</p></td></tr>');
+			$('#diena_'+key+' table').append('<tr><td class="laiks-th">' +value2.laiks+'</p></td><td><p>' +value2.nosaukums+ '</p></td><td><p>'+value2.kabinets+'</p></td></tr>');
 		});
+	});
+
+	$(".sort-p").on("click",function() {
+		console.log($(this).attr('data-id'));
+		$('.dienas').hide();
+		$('#diena_' +$(this).attr('data-id')+ '').show();
 	});
 });
