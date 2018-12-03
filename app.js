@@ -64,12 +64,43 @@ $(document).ready(function() {
 		$.each(stundas, function(key2, value2){
 			console.log(value2);
 			$('#diena_'+key+' table').append('<tr><td class="laiks-th">' +value2.laiks+'</p></td><td><p>' +value2.nosaukums+ '</p></td><td><p>'+value2.kabinets+'</p></td></tr>');
+			$('.dienas').hide();
 		});
 	});
-
+	
 	$(".sort-p").on("click",function() {
 		console.log($(this).attr('data-id'));
 		$('.dienas').hide();
 		$('#diena_' +$(this).attr('data-id')+ '').show();
+		
 	});
+	$(".class-select").on("click",function() {
+		console.log($(this).attr('data-id'));
+		$('.dienas').hide();
+		$('#diena_' +$(this).attr('data-id')+ '').show();	
+		$('button').removeClass('activeday');
+	});
+	$('button').on('click', function(){
+		$('button').removeClass('activeday');
+		$(this).addClass('activeday');
+
+	});
+
+	$('.mobile-menu-btn').on('click', function() {
+		if($(this).hasClass('active')) {
+			$('.mobile-menu-btn').removeClass('active');
+		} else {
+			$('.mobile-menu-btn').addClass('active');
+		}
+	});
+	
+
+});
+var listHTML = $(".Title").html();
+var listItems = listHTML.split("<br>");
+$(".Title").html("");
+$.each(listItems, function(i, v) {
+  var item =
+    '<div class="Title-mask"><span class="Title-line">' + v + "</span></div>";
+  $(".Title").append(item);
 });
