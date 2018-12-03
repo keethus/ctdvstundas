@@ -47,20 +47,23 @@ var stunduSaraksts = {
 
 	}
 }
-
 $(document).ready(function() {
-	console.log( "Ready!" );
+	console.log( "ready" );
 	console.log(stunduSaraksts);
 	
-	$.each(stunduSaraksts, function(key, value) {
-		
-		$('#saraksts').append('<div id="wrapperis"><button class="boton" id="btn_'+key+'">'+key+'<span class="icon-right"></span><span class="icon-right after"></span></button><div class="diena" id="diena_' +key+ '"></div></div>');
-		
+
+	$.each(stunduSaraksts, function(key, value){
+		console.log(key+ ": " + value);
+		$('#saraksts').append('<div id="diena_' +key+ '"><h3></div>');
+
 		var stundas = value;
 		
-		$.each( stundas, function( key2, value2) {
-			
-			$('#diena_' +key+ '').append('<p> <b id="kabStils">'+value2.kabinets+ ' </b><b id="laikaStils">'+value2.laiks+ '</b> 	 <id="prieksNosaukums">'+value2.nosaukums+ '</i></p>');
+		$('#diena_'+key+'').append('<table></table>');
+		$('#diena_' +key+' table').append('<tr><th>Laiks:</th><th>Prieksmets:</th><th>Kabinets:</th></tr>');
+
+		$.each(stundas, function(key2, value2){
+			console.log(value2);
+			$('#diena_'+key+' table').append('<tr><td><>' +value2.laiks+'</p></td><td><p>' +value2.nosaukums+ '</p></td><td><p>'+value2.kabinets+'</p></td></tr>');
 		});
 	});
 });
