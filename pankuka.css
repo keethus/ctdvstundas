@@ -2,7 +2,7 @@
 html, body {
 }
 body {
-  background: linear-gradient(132deg, #141414, #2e2e2e, #414141, #2e2e2e);
+  background: linear-gradient(132deg, #111111, #2e2e2e, #414141, #2e2e2e);
   background-size: 400% 400%;
   animation: BackgroundGradient 30s ease infinite;
 }
@@ -11,6 +11,7 @@ body {
   50% {background-position: 100% 50%;}
   100% {background-position: 0% 50%;}
 }
+*/
 #saraksts {
 	margin-top:10%;
 	margin-left:12%;
@@ -19,7 +20,7 @@ body {
 .diena {
 	position:absolute;
 	position:fixed;
-	margin-left:220px;
+	margin-left:220px;	
 	top:24%;
 	transform: scaleY(0);
 	color:white;
@@ -89,10 +90,10 @@ body {
 	text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 	text-transform: uppercase;
 }
+
 .title-ctdv {
 	color:#f39c12;
 	font-size: 90px;
-	margin:-10px;
 	font-weight:bold;
 	transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -205,3 +206,4 @@ button {
 	opacity: 0;
 	transition: .2s ease-in all;
   }
+*/
