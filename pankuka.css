@@ -1,0 +1,207 @@
+@import "https://fonts.googleapis.com/css?family=Space+Mono";
+html, body {
+}
+body {
+  background: linear-gradient(132deg, #141414, #2e2e2e, #414141, #2e2e2e);
+  background-size: 400% 400%;
+  animation: BackgroundGradient 30s ease infinite;
+}
+@keyframes BackgroundGradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+#saraksts {
+	margin-top:10%;
+	margin-left:12%;
+}
+
+.diena {
+	position:absolute;
+	position:fixed;
+	margin-left:220px;
+	top:24%;
+	transform: scaleY(0);
+	color:white;
+	font-family: 'Ubuntu', sans-serif;
+	transform-style: flat;
+	transform-origin: left;  
+}
+#laikaStils {
+	display:none;
+}
+#kabStils {
+	color:#f39c12;
+}
+#btn_Pirmdiena:hover + #diena_Pirmdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+
+}
+#btn_Otrdiena:hover + #diena_Otrdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Tresdiena:hover + #diena_Tresdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Ceturtdiena:hover + #diena_Ceturtdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+#btn_Piektdiena:hover + #diena_Piektdiena {
+  overflow: hidden;
+	-webkit-transition: all 200ms ease;
+  transform: scaleY(1);
+  transform-origin: left;
+}
+
+#btn_Otrdiena{
+	margin-top:65px;
+} 
+#btn_Tresdiena{
+	margin-top:130px;
+} 
+#btn_Ceturtdiena{
+	margin-top:195px;
+}
+#btn_Piektdiena{
+	margin-top:260px;
+}
+.from-left {
+	top:25%;
+}
+.title {
+	float:right;
+	margin-right: 15%;
+	margin-top:3%;
+	color:white;
+	font-family: 'Ubuntu', sans-serif;
+	letter-spacing: 0.5px;
+	text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
+}
+.title-ctdv {
+	color:#f39c12;
+	font-size: 90px;
+	margin:-10px;
+	font-weight:bold;
+	transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+}
+.title-ctdv:hover{
+	text-decoration: none;
+	color:white;
+}
+.title-pt {
+	color:#f39c12;
+}
+.title-stundu {
+	background-color: #f39c12;
+	padding:5px;
+	padding-left: 10px;
+	padding-right:10px;
+	
+}
+button {
+	font-family: 'Ubuntu', sans-serif;
+	letter-spacing: 0.5px;
+	background: none;
+	color: white;
+	position: absolute;
+	outline: none;
+	border: none;
+	height: 50px;
+	width: 190px;
+	font-size: 14px;
+	z-index: 2;
+	transition: .01s .23s ease-out all;
+	overflow: hidden;
+	text-transform: uppercase;
+	font-weight:bold;
+  }
+  button:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 55%;
+	background: #f39c12;
+	z-index: -1;
+	transition: .3s ease-in all;
+  }
+  button:after {
+	content: '';
+	position: absolute;
+	left: -5%;
+	top: 5%;
+	height: 90%;
+	width: 5%;
+	background: white;
+	z-index: -1;
+	transition: .4s .02s ease-in all;
+  }
+  button:hover {
+	cursor: pointer;
+	color: transparent;
+  }
+  button:hover:before {
+	left: 100%;
+	width: 25%;
+  }
+  button:hover:after {
+	left: 100%;
+	width: 70%;
+  }
+  button:hover .icon-right.after:after {
+	left: -80px;
+	color: white;
+	transition: .2s .2s ease all;
+  }
+  button:hover .icon-right.after:before {
+	left: -104px;
+	top: 14px;
+	opacity: 0.2;
+	color: white;
+  }
+  
+  .icon-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+  }
+  .icon-right:after {
+	font-family: "FontAwesome";
+	content: '\2b';
+	font-size: 24px;
+	display: inline-block;
+	position: relative;
+	top: 26px;
+	-webkit-transform: translate3D(0, -50%, 0);
+			transform: translate3D(0, -50%, 0);
+  }
+  .icon-right.after:after {
+	left: -250px;
+	color: black;
+	transition: .15s .25s ease left, .5s .05s ease color;
+  }
+
+  .icon-right.after:before {
+	position: absolute;
+	left: -230px;
+	top: 14px;
+	opacity: 0;
+	transition: .2s ease-in all;
+  }
