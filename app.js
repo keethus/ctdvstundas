@@ -74,33 +74,59 @@ $(document).ready(function() {
 		$('#diena_' +$(this).attr('data-id')+ '').show();
 		
 	});
-	$(".class-select").on("click",function() {
-		console.log($(this).attr('data-id'));
-		$('.dienas').hide();
-		$('#diena_' +$(this).attr('data-id')+ '').show();	
-		$('button').removeClass('activeday');
-	});
-	$('button').on('click', function(){
-		$('button').removeClass('activeday');
-		$(this).addClass('activeday');
-
-	});
-
-	$('.mobile-menu-btn').on('click', function() {
-		if($(this).hasClass('active')) {
-			$('.mobile-menu-btn').removeClass('active');
-		} else {
-			$('.mobile-menu-btn').addClass('active');
-		}
-	});
-	
-
 });
-var listHTML = $(".Title").html();
-var listItems = listHTML.split("<br>");
-$(".Title").html("");
-$.each(listItems, function(i, v) {
-  var item =
-    '<div class="Title-mask"><span class="Title-line">' + v + "</span></div>";
-  $(".Title").append(item);
-});
+
+
+
+
+
+
+
+var theToggle = document.getElementById('toggle');
+
+// based on Todd Motto functions
+// https://toddmotto.com/labs/reusable-js/
+
+// hasClass
+function hasClass(elem, className) {
+	return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+// addClass
+function addClass(elem, className) {
+    if (!hasClass(elem, className)) {
+    	elem.className += ' ' + className;
+    }
+}
+// removeClass
+function removeClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	if (hasClass(elem, className)) {
+        while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+            newClass = newClass.replace(' ' + className + ' ', ' ');
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    }
+}
+// toggleClass
+function toggleClass(elem, className) {
+	var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+    if (hasClass(elem, className)) {
+        while (newClass.indexOf(" " + className + " ") >= 0 ) {
+            newClass = newClass.replace( " " + className + " " , " " );
+        }
+        elem.className = newClass.replace(/^\s+|\s+$/g, '');
+    } else {
+        elem.className += ' ' + className;
+    }
+}
+
+theToggle.onclick = function() {
+   toggleClass(this, 'on');
+   return false;
+}
+
+if ($('#toggle').is(".on")) {
+    alert($("#toggle").hasClass(".on"));
+}
+
+
